@@ -13,11 +13,10 @@ function App() {
             Under Construction
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-2">
-            Hi, I'm Kalibetre!
+            Hi, I'm Kalkidan Betre!
           </p>
           <p className="text-lg text-gray-400 mb-8">
-            My personal website is currently being built. Something amazing is
-            coming soon!
+            My personal website is currently being built.
           </p>
         </div>
 
@@ -78,9 +77,7 @@ function App() {
           </a>
         </div>
 
-        <p className="text-sm text-gray-600 mt-8">
-          © 2025 Kalibetre. Stay tuned!
-        </p>
+        <p className="text-sm text-gray-600 mt-8">© 2025 Kalibetre.</p>
       </div>
     </div>
   )
