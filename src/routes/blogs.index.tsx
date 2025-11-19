@@ -48,10 +48,12 @@ function BlogsPage() {
     <Page>
       <Navigation items={[]} />
       <div className="space-y-1">
-        <div className="flex p-6 flex-col sm:flex-row gap-5 sm:justify-between mt-5">
+        <div className="flex p-5 flex-col sm:flex-row gap-5 sm:justify-between mt-5">
           <div className="space-y-2">
             <div className="text-3xl md:text-5xl">Blogs</div>
-            <div className="text-sm">Blogs about tech, life, and stuff</div>
+            <div className="text-sm pl-1">
+              Blogs about tech, life, and stuff
+            </div>
           </div>
           <Author />
         </div>
