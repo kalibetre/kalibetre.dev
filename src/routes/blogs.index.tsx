@@ -12,7 +12,12 @@ import { cn } from '@/lib/utils'
 const fetchBlogPosts = createServerFn({ method: 'GET' })
   .inputValidator(z.string().optional())
   .handler(() => {
-    return allBlogs
+    return allBlogs.sort((a, b) => {
+      if (a.comingSoon && !b.comingSoon) return 1
+      if (!a.comingSoon && b.comingSoon) return -1
+
+      return new Date(b.published).getTime() - new Date(a.published).getTime()
+    })
   })
 
 export const Route = createFileRoute('/blogs/')({
