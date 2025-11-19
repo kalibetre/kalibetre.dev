@@ -34,16 +34,26 @@ export function Footer() {
 export function Navigation() {
   const { theme, toggleTheme } = useTheme()
   return (
-    <Section className="p-0 h-12 flex items-center justify-between px-6">
-      <Link
-        to="/blogs"
-        className="flex group items-center pr-6 gap-2 h-full transition-all ease-in-out"
-      >
-        <ChevronLeft className="text-slate-200 dark:text-slate-700 group-hover:text-slate-500 dark:group-hover:text-slate-300" />
-        <div className="group-hover:text-slate-500 dark:group-hover:text-slate-300 text-sm">
-          BLOGS
-        </div>
-      </Link>
+    <Section className="p-0 h-12 z-100 flex items-center justify-between px-6 sticky top-0 backdrop-blur-3xl">
+      <div className="flex gap-1 items-center h-8">
+        <Link
+          to="/blogs"
+          className="flex group items-center pr-6 gap-2 h-full transition-all ease-in-out"
+        >
+          <ChevronLeft className="text-slate-200 dark:text-slate-700 group-hover:text-slate-500 dark:group-hover:text-slate-500" />
+          <div className="group-hover:text-slate-500 dark:group-hover:text-slate-300 text-sm">
+            BLOGS
+          </div>
+        </Link>
+        <Link
+          to="/"
+          className="flex group  items-center pr-6 gap-2 h-full transition-all ease-in-out"
+        >
+          <div className="text-sm text-slate-500 dark:text-slate-200 group-hover:text-slate-400 dark:group-hover:text-slate-500">
+            HOME
+          </div>
+        </Link>
+      </div>
       <Button onClick={toggleTheme} size="icon-sm" variant="ghost">
         {theme == 'dark' ? <Sun /> : <Moon />}
       </Button>
