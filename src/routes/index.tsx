@@ -77,7 +77,7 @@ function App() {
           </a>
         </div>
 
-        <p className="text-sm text-gray-600 mt-8">© 2025 Kalibetre.</p>
+        <p className="text-sm text-gray-600 mt-8">© 2025 Kalkidan Betre</p>
       </div>
     </div>
   )

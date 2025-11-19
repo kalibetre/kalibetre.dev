@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
+import { ThemeProvider } from '@/providers/theme-provider'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -15,7 +16,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'kalibetre',
       },
     ],
     links: [
@@ -24,8 +25,22 @@ export const Route = createRootRoute({
         href: appCss,
       },
     ],
-  }),
+    scripts: [
+      {
+        children: `
+              (function () {
+                try {
+                  const saved = localStorage.getItem('theme');
+                  const system = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+                  const theme = saved || (system ? 'dark' : 'light');
+                  document.documentElement.classList.toggle('dark', theme === 'dark');
+                } catch (e) {}
+              })();
+            `,
+      },
+    ],
+  }),
   shellComponent: RootDocument,
 })
 
@@ -36,7 +51,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
         <TanStackDevtools
           config={{
             position: 'bottom-right',
