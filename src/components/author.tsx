@@ -2,7 +2,7 @@ import Socials from './socials'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { formatDateToReadable } from '@/utils/utils'
 
-export default function Author({ publishedOn }: { publishedOn: string }) {
+export default function Author({ publishedOn }: { publishedOn?: string }) {
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center gap-3">
@@ -15,9 +15,11 @@ export default function Author({ publishedOn }: { publishedOn: string }) {
           <Socials />
         </div>
       </div>
-      <div className="text-xs">
-        {formatDateToReadable(new Date(publishedOn))}
-      </div>
+      {publishedOn && (
+        <div className="text-xs">
+          {formatDateToReadable(new Date(publishedOn))}
+        </div>
+      )}
     </div>
   )
 }

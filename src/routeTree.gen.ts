@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs.index'
-import { Route as BlogsSplatRouteImport } from './routes/blogs.$'
+import { Route as BlogsSplatRouteImport } from './routes/blogs.$slug.tsx'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
