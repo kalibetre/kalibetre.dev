@@ -6,6 +6,8 @@ import { seo } from '@/utils/seo'
 import { Navigation, Page } from '@/components/layouts'
 import { formatDateToReadable } from '@/utils/utils'
 import Author from '@/components/author'
+import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 
 const fetchBlogPosts = createServerFn({ method: 'GET' })
   .inputValidator(z.string().optional())
@@ -53,24 +55,40 @@ function BlogsPage() {
           {[...blogs, ...blogs, ...blogs, ...blogs, ...blogs, ...blogs].map(
             (blog, idx) => (
               <div
-                className="relative group space-y-2 p-6 border-l-0 border-background hover:border-slate-500/50 hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
+                className={cn(
+                  'relative group space-y-2 p-6 border-l-0 border-background',
+                  !blog.comingSoon &&
+                    'hover:border-slate-500/50 hover:bg-slate-200/50 dark:hover:bg-slate-800/50',
+                )}
                 key={idx}
               >
-                <div className="absolute bg-slate-500/50 w-1 top-0 -left-0.5 h-full scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100"></div>
-                <Link
-                  key={idx}
-                  to="/blogs/$slug"
-                  params={{ slug: blog.slug }}
-                  className="text-xl space-y-2 hover:text-slate-500 dark:hover:text-slate-300 transition-all ease-in-out"
-                >
-                  <p>{blog.title}</p>
-                  <div className="text-sm text-gray-500 dark:text-slate-400">
-                    {blog.description}
+                {blog.comingSoon ? (
+                  <div className="text-xl space-y-2">
+                    <p>{blog.title}</p>
+                    <div className="text-sm text-gray-500 dark:text-slate-400">
+                      {blog.description}
+                    </div>
+                    <Badge variant="outline">Write-up coming soon</Badge>
                   </div>
-                  <div className="text-xs text-gray-500 dark:text-slate-400">
-                    {formatDateToReadable(new Date(blog.published))}
-                  </div>
-                </Link>
+                ) : (
+                  <>
+                    <div className="absolute bg-slate-500/50 w-1 top-0 -left-0.5 h-full scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100"></div>
+                    <Link
+                      key={idx}
+                      to="/blogs/$slug"
+                      params={{ slug: blog.slug }}
+                      className="text-xl space-y-2 group-hover:text-slate-500 dark:group-hover:text-slate-300 transition-all ease-in-out"
+                    >
+                      <p>{blog.title}</p>
+                      <div className="text-sm text-gray-500 dark:text-slate-400">
+                        {blog.description}
+                      </div>
+                      <div className="text-xs text-gray-500 dark:text-slate-400">
+                        {formatDateToReadable(new Date(blog.published))}
+                      </div>
+                    </Link>
+                  </>
+                )}
               </div>
             ),
           )}

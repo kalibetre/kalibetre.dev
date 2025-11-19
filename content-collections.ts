@@ -10,6 +10,7 @@ const blogs = defineCollection({
     description: z.string().optional(),
     published: z.string().date(),
     content: z.string(),
+    comingSoon: z.boolean().optional(),
   }),
   transform: ({ content, ...blog }) => {
     return {
@@ -17,6 +18,7 @@ const blogs = defineCollection({
       title: blog.title,
       description: blog.description,
       published: blog.published,
+      comingSoon: blog.comingSoon,
       content,
     }
   },
