@@ -12,4 +12,10 @@
       "persist": true,
     },
   },
+  "routes": [
+    {
+      "pattern": "kalibetre.dev",
+      "custom_domain": true,
+    },
+  ],
 }
