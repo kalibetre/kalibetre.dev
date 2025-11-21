@@ -5,10 +5,12 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import { cloudflare } from '@cloudflare/vite-plugin'
 import contentCollections from '@content-collections/vite'
+import { devtools } from '@tanstack/devtools-vite'
 
 const config = defineConfig({
   plugins: [
     // this is the plugin that enables path aliases
+    devtools(),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
