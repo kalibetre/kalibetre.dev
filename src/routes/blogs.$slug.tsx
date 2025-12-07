@@ -9,7 +9,9 @@ import rehypeSlug from 'rehype-slug'
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
 import Author from '@/components/author'
-import { Navigation, Page, Section } from '@/components/layouts'
+import { Page } from '@/components/layouts/layouts'
+import { Navigation } from '@/components/layouts/navigation'
+import { Section } from '@/components/layouts/section'
 
 const fetchBlogPost = createServerFn({ method: 'GET' })
   .inputValidator(z.string().optional())

@@ -3,11 +3,12 @@ import { z } from 'zod'
 import { allBlogs } from 'content-collections'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { seo } from '@/utils/seo'
-import { Navigation, Page } from '@/components/layouts'
 import { formatDateToReadable } from '@/utils/utils'
 import Author from '@/components/author'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
+import { Page } from '@/components/layouts/layouts'
+import { Navigation } from '@/components/layouts/navigation'
 
 const fetchBlogPosts = createServerFn({ method: 'GET' })
   .inputValidator(z.string().optional())
