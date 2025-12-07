@@ -145,16 +145,16 @@ export function TechStacks() {
   ]
 
   return (
-    <div>
+    <Section className="border-b border-t-0 mt-20">
       <SectionHeader
         title="Technical Expertise"
         subtitle="Core technologies, frameworks, and skills I work with daily"
       />
-      <Section className="grid mt-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-(--border-color)">
+      <Section className="grid mt-12 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-(--border-color)">
         {libraries.map((library, idx) => (
           <TechLibrary key={idx} library={library} />
         ))}
       </Section>
-    </div>
+    </Section>
   )
 }

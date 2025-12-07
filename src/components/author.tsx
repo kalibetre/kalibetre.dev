@@ -11,7 +11,7 @@ export default function Author({ publishedOn }: { publishedOn?: string }) {
           <AvatarFallback>KB</AvatarFallback>
         </Avatar>
         <div className="flex flex-col justify-start items-start gap-1">
-          <div>Kalkidan Betre</div>
+          <p>Kalkidan Betre</p>
           <Socials />
         </div>
       </div>
