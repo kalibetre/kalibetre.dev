@@ -9,6 +9,7 @@ import {
   Rocket,
   Zap,
   ExternalLink,
+  Sparkles,
 } from 'lucide-react'
 import { Section, SectionHeader } from './layouts/section'
 
@@ -25,6 +26,7 @@ enum TechCategory {
   STYLING = 'styling',
   SKILL = 'skill',
   CLOUD = 'cloud',
+  AI = 'ai',
 }
 
 interface ProjectTech {
@@ -89,13 +91,18 @@ export function Projects() {
   const projects: Array<Project> = [
     {
       company: 'AAI Labs',
-      title: 'Export Discovery',
+      title: 'Export Discovery - Automated Caller Agent',
       period: 'Feb 2025 - To-Date',
       description:
         'Leading development as Team Lead and Full-Stack Engineer, architecting complete product infrastructure from inception. Implementing core enterprise features including call management systems, AI service integration, billing platforms, and third-party API integrations.',
       type: '',
       companyUrl: 'https://www.aai-labs.com/en/home',
       tech: [
+        {
+          label: 'AI',
+          icon: Sparkles,
+          categories: [TechCategory.AI],
+        },
         {
           label: 'FastAPI',
           icon: Zap,
@@ -112,9 +119,14 @@ export function Projects() {
           categories: [TechCategory.BACKEND, TechCategory.DATABASE],
         },
         {
-          label: 'GCP',
-          icon: Cloud,
-          categories: [TechCategory.DEVOPS, TechCategory.CLOUD],
+          label: 'Redis',
+          icon: Database,
+          categories: [TechCategory.BACKEND, TechCategory.DATABASE],
+        },
+        {
+          label: 'Docker',
+          icon: Container,
+          categories: [TechCategory.DEVOPS, TechCategory.TOOLING],
         },
       ],
     },
@@ -127,6 +139,11 @@ export function Projects() {
       type: '',
       companyUrl: 'https://www.aai-labs.com/en/home',
       tech: [
+        {
+          label: 'AI',
+          icon: Sparkles,
+          categories: [TechCategory.AI],
+        },
         {
           label: 'FastAPI',
           icon: Zap,
@@ -163,6 +180,11 @@ export function Projects() {
       type: '',
       companyUrl: 'https://www.aai-labs.com/en/home',
       tech: [
+        {
+          label: 'AI',
+          icon: Sparkles,
+          categories: [TechCategory.AI],
+        },
         {
           label: 'FastAPI',
           icon: Zap,
@@ -204,6 +226,11 @@ export function Projects() {
       type: 'Private Org Project',
       companyUrl: 'https://www.alxafrica.com/',
       tech: [
+        {
+          label: 'AI',
+          icon: Sparkles,
+          categories: [TechCategory.AI],
+        },
         {
           label: 'Python',
           icon: Code,
