@@ -89,40 +89,34 @@ function BlogPage() {
 
       {restricted ? (
         <>
-          <Section className="px-6 py-8">
-            <div className="max-w-2xl mx-auto text-center space-y-6">
-              <div className="flex justify-center">
-                <Lock className="h-12 w-12 text-gray-400" />
-              </div>
-              <div className="space-y-2">
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+          <div className="px-6 py-4">
+            <div className="max-w-none border border-(--border-color) rounded-lg p-4 space-y-3">
+              <div className="flex items-center gap-2">
+                <Lock className="h-4 w-4 text-gray-500 dark:text-gray-400" />
+                <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   Restricted Content
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  This blog post is available exclusively to{' '}
-                  {restrictedToCompany} team members. But you can read the AI
-                  summary below
-                </p>
+                </span>
               </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {`This blog post is available exclusively to ${restrictedToCompany} team members. However, you can read the AI summary below.`}
+              </p>
               {externalLink && (
-                <div className="pt-4">
-                  <a
-                    href={externalLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-                  >
-                    Access via Company Portal
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                </div>
+                <a
+                  href={externalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm text-gray-900 dark:text-gray-100 dark:hover:text-gray-300 transition-colors hover:text-sky-900 hover:underline"
+                >
+                  Access via Company Portal
+                  <ExternalLink className="h-3 w-3" />
+                </a>
               )}
             </div>
-          </Section>
+          </div>
           {aiSummary && (
             <Section className="px-6 pt-5">
-              <div className="mb-4 prose-stone prose-sm dark:prose-invert max-w-none bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
-                <h2 className="flex gap-2 items-center text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+              <div className="mb-4 prose-stone prose dark:prose-invert max-w-none bg-(--hover-color) p-4 rounded-lg border border-(--border-color)">
+                <h2 className="flex gap-2 items-center text-lg font-semibold mb-2">
                   <Sparkles className="h-4 w-4" />
                   AI Summary
                 </h2>

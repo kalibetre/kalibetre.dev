@@ -65,7 +65,7 @@ function BlogsPage() {
               className={cn(
                 'relative group space-y-2 p-6 border-l-0 border-background',
                 !blog.comingSoon &&
-                  'hover:border-slate-500/50 hover:bg-slate-200/50 dark:hover:bg-slate-800/50',
+                  'hover:border-slate-500/50 hover:bg-(--hover-color)',
               )}
               key={idx}
             >
