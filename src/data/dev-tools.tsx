@@ -1,12 +1,12 @@
 import {
-  Terminal,
-  FileText,
+  Bot,
   Calendar,
   Code2,
-  Bot,
-  Monitor,
   Cpu,
+  FileText,
   Key,
+  Monitor,
+  Terminal,
 } from 'lucide-react'
 
 export enum DevToolCategory {

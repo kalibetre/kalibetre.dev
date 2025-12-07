@@ -40,35 +40,22 @@ export const techLibraries: Array<TechLibrary> = [
     categories: [TechCategory.LANGUAGE, TechCategory.BACKEND],
   },
   {
-    label: 'JavaScript',
+    label: 'JavaScript & TypeScript',
     icon: FileCode,
-    categories: [TechCategory.LANGUAGE, TechCategory.FRONTEND],
+    categories: [TechCategory.LANGUAGE],
   },
-  {
-    label: 'TypeScript',
-    icon: FileCode,
-    categories: [
-      TechCategory.LANGUAGE,
-      TechCategory.FRONTEND,
-      TechCategory.BACKEND,
-      TechCategory.TOOLING,
-    ],
-  },
+
   {
     label: 'Go',
     icon: Code,
-    categories: [TechCategory.LANGUAGE, TechCategory.BACKEND],
+    categories: [TechCategory.LANGUAGE, TechCategory.BACKEND, TechCategory.API],
   },
   {
     label: 'FastAPI',
     icon: Zap,
     categories: [TechCategory.BACKEND, TechCategory.API],
   },
-  {
-    label: 'PostgreSQL',
-    icon: Database,
-    categories: [TechCategory.BACKEND, TechCategory.DATABASE],
-  },
+
   {
     label: 'React',
     icon: Globe,
@@ -95,11 +82,6 @@ export const techLibraries: Array<TechLibrary> = [
     categories: [TechCategory.DEVOPS, TechCategory.TOOLING],
   },
   {
-    label: 'Vite',
-    icon: Rocket,
-    categories: [TechCategory.TOOLING, TechCategory.FRONTEND],
-  },
-  {
     label: 'Bun',
     icon: Flame,
     categories: [TechCategory.TOOLING, TechCategory.BACKEND],
@@ -108,11 +90,6 @@ export const techLibraries: Array<TechLibrary> = [
     label: 'CI/CD',
     icon: RefreshCw,
     categories: [TechCategory.DEVOPS, TechCategory.CICD],
-  },
-  {
-    label: 'Team Lead',
-    icon: Users,
-    categories: [TechCategory.SKILL],
   },
   {
     label: 'Agile Development',
