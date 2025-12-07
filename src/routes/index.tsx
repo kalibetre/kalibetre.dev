@@ -6,6 +6,7 @@ import Socials from '@/components/socials'
 import { TechStacks } from '@/components/tech-stacks'
 import { Navigation } from '@/components/layouts/navigation'
 import { Projects } from '@/components/projects'
+import { DevTools } from '@/components/dev-tools'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -37,6 +38,8 @@ function App() {
       <TechStacks />
 
       <Projects />
+
+      <DevTools />
     </Page>
   )
 }

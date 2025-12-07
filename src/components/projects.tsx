@@ -47,7 +47,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <Section className="border-t-0 mt-20 sm:mt-40">
+    <Section className="border-t-0 border-b mt-20 sm:mt-40">
       <SectionHeader
         title="Projects & Experience"
         subtitle="Professional projects I've worked on"
