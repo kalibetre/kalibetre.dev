@@ -17,7 +17,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       ? 'dark'
       : 'light'
 
-    setTheme(saved || system)
+    setTheme(saved !== null ? saved : system)
   }, [])
 
   useEffect(() => {
