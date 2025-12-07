@@ -8,11 +8,13 @@ import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { ExternalLink, Lock, Sparkles } from 'lucide-react'
+import Giscus from '@giscus/react'
 import { seo } from '@/utils/seo'
 import Author from '@/components/author'
 import { Page } from '@/components/layouts/layouts'
 import { Navigation } from '@/components/layouts/navigation'
 import { Section } from '@/components/layouts/section'
+import { useTheme } from '@/providers/theme-provider'
 
 const fetchBlogPost = createServerFn({ method: 'GET' })
   .inputValidator(z.string().optional())
@@ -68,6 +70,8 @@ function BlogPage() {
     restrictedToCompany,
     externalLink,
   } = Route.useLoaderData()
+
+  const { theme } = useTheme()
 
   return (
     <Page>
@@ -140,6 +144,23 @@ function BlogPage() {
           </Markdown>
         </div>
       )}
+
+      <Section className="p-4">
+        <Giscus
+          id="comments"
+          repo="kalibetre/kalibetre.dev"
+          repoId="R_kgDOQS1GQQ="
+          category="Announcements"
+          categoryId="DIC_kwDOQS1GQc4Czgdp"
+          mapping="pathname"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="bottom"
+          theme={theme}
+          lang="en"
+          loading="lazy"
+        />
+      </Section>
     </Page>
   )
 }
