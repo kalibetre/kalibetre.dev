@@ -30,7 +30,7 @@ export interface Project {
 export const projects: Array<Project> = [
   {
     company: 'AAI Labs',
-    title: 'Export Discovery',
+    title: 'Export Discovery - Autonomous Caller Agent',
     period: 'Feb 2025 - To-Date',
     description:
       'Leading development as Team Lead and Full-Stack Engineer, architecting complete product infrastructure from inception. Implementing core enterprise features including call management systems, AI service integration, billing platforms, and third-party API integrations.',
@@ -66,7 +66,7 @@ export const projects: Array<Project> = [
   },
   {
     company: 'AAI Labs',
-    title: 'GovTech NMA — Duplicate Application Detection',
+    title: 'GovTech NMA — Duplicate Funding Application Analysis and Detection',
     period: 'Sep 2024 – Feb 2025',
     description:
       'Architected and developed end-to-end product solution, seamlessly integrating advanced duplicate detection algorithms. Delivered measurable impact by reducing client review cycles from weeks to minutes, resulting in successful deployment and active client utilization.',

@@ -5,7 +5,7 @@ import type { Project } from '../data/projects-data'
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="p-6 bg-background">
+    <div className="p-6 bg-background hover:bg-(--hover-color)">
       <div className="mb-4">
         <div className="font-semibold text-lg">{project.title}</div>
         <div className="text-sm text-gray-600 mt-1">{project.period}</div>

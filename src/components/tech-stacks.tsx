@@ -5,7 +5,7 @@ import type { TechLibrary } from '../data/tech-libraries'
 export function TechLibraryItem({ library }: { library: TechLibrary }) {
   const Icon = library.icon
   return (
-    <div className="p-4 bg-background">
+    <div className="p-4 bg-background hover:bg-(--hover-color)">
       <div className="flex items-center gap-2">
         <Icon className="w-5 h-5" />
         <div className="font-medium text-sm">{library.label}</div>
