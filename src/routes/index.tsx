@@ -1,9 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Construction } from 'lucide-react'
 import { AvatarImage } from '@radix-ui/react-avatar'
-import { Navigation, Page } from '@/components/layouts'
+import { Page } from '@/components/layouts/layouts'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import Socials from '@/components/socials'
+import { TechStacks } from '@/components/tech-stacks'
+import { Navigation } from '@/components/layouts/navigation'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -30,29 +31,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="text-center">
-        <Construction className="w-12 h-12 mx-auto mb-6 animate-pulse" />
-        <h1 className="text-3xl font-bold mb-4 text-gray-400">
-          Coming soon, brewing ...
-        </h1>
-      </div>
 
-      <div className="flex items-center justify-center mb-60">
-        <div className="flex space-x-2">
-          <div
-            className="w-3 h-3 bg-white rounded-full animate-bounce"
-            style={{ animationDelay: '0ms' }}
-          ></div>
-          <div
-            className="w-3 h-3 bg-white rounded-full animate-bounce"
-            style={{ animationDelay: '150ms' }}
-          ></div>
-          <div
-            className="w-3 h-3 bg-white rounded-full animate-bounce"
-            style={{ animationDelay: '300ms' }}
-          ></div>
-        </div>
-      </div>
+      <TechStacks />
     </Page>
   )
 }
