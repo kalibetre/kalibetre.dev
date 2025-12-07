@@ -94,12 +94,9 @@ function BlogPage() {
               <div className="flex items-center gap-2">
                 <Lock className="h-4 w-4 text-gray-500 dark:text-gray-400" />
                 <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                  Restricted Content
+                  {`This blog post is available exclusively to ${restrictedToCompany} team members. However, you can read the AI summary below.`}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {`This blog post is available exclusively to ${restrictedToCompany} team members. However, you can read the AI summary below.`}
-              </p>
               {externalLink && (
                 <a
                   href={externalLink}
