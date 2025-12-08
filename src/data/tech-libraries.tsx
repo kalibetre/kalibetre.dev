@@ -1,15 +1,12 @@
 import {
   Code,
   Container,
-  Database,
   FileCode,
   Flame,
   Globe,
   Layers,
   Palette,
   RefreshCw,
-  Rocket,
-  Users,
   Zap,
 } from 'lucide-react'
 
@@ -84,7 +81,7 @@ export const techLibraries: Array<TechLibrary> = [
   {
     label: 'Bun',
     icon: Flame,
-    categories: [TechCategory.TOOLING, TechCategory.BACKEND],
+    categories: [TechCategory.TOOLING],
   },
   {
     label: 'CI/CD',
