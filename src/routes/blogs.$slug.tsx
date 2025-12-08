@@ -94,24 +94,24 @@ function BlogPage() {
       {restricted ? (
         <>
           <div className="px-6 py-4">
-            <div className="max-w-none border border-(--border-color) rounded-lg p-4 space-y-3">
-              <div className="flex items-center gap-2">
-                <Lock className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+            <div className="border border-(--border-color) rounded-lg p-4 space-y-3 flex gap-2">
+              <Lock className="h-4 w-4 text-gray-500 dark:text-gray-400 mt-1" />
+              <div className="flex flex-1 flex-col gap-2">
+                <span className="font-medium text-gray-900 dark:text-gray-100">
                   {`This blog post is available exclusively to ${restrictedToCompany} team members. However, you can read the AI summary below.`}
                 </span>
+                {externalLink && (
+                  <a
+                    href={externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-gray-900 dark:text-gray-100 dark:hover:text-gray-300 transition-colors hover:text-sky-900 hover:underline"
+                  >
+                    Access via Company Portal
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
               </div>
-              {externalLink && (
-                <a
-                  href={externalLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-gray-900 dark:text-gray-100 dark:hover:text-gray-300 transition-colors hover:text-sky-900 hover:underline"
-                >
-                  Access via Company Portal
-                  <ExternalLink className="h-3 w-3" />
-                </a>
-              )}
             </div>
           </div>
           {aiSummary && (
