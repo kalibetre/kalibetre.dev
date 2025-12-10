@@ -30,7 +30,7 @@ export interface Project {
 export const projects: Array<Project> = [
   {
     company: 'AAI Labs',
-    title: 'Export Discovery - Autonomous Caller Agent',
+    title: 'Export Discovery - AI-powered Sales Engagement Platform',
     period: 'Feb 2025 - To-Date',
     description:
       'Leading development as Team Lead and Full-Stack Engineer, architecting complete product infrastructure from inception. Implementing core enterprise features including call management systems, AI service integration, billing platforms, and third-party API integrations.',
