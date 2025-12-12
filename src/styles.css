@@ -168,3 +168,35 @@ code {
 .hljs span {
   background: transparent !important;
 }
+
+/* Center and size images in blog content */
+.prose img {
+  @apply mx-auto block max-w-full h-auto rounded-lg;
+}
+
+/* Style figures and captions in blog content */
+.prose figure {
+  @apply mx-auto my-6 max-w-full;
+}
+
+.prose figcaption {
+  @apply text-center text-sm text-gray-600 dark:text-gray-400 italic mt-2;
+}
+
+.prose figcaption {
+  @apply text-center text-sm text-gray-600 dark:text-gray-400 italic mt-2;
+}
+
+/* Style Open Source section links */
+.prose h2 + ul {
+  @apply mt-4 space-y-2;
+}
+
+.prose h2 + ul li a {
+  @apply inline-flex items-center gap-2 text-gray-900 dark:text-gray-100 dark:hover:text-gray-300 transition-colors hover:text-sky-900 hover:underline;
+}
+
+.prose h2 + ul li a::before {
+  content: '🔗';
+  @apply mr-1;
+}

@@ -1,11 +1,6 @@
 import { createServerFn } from '@tanstack/react-start'
 import { z } from 'zod'
 import { allBlogs } from 'content-collections'
-import Markdown from 'react-markdown'
-import rehypeHighlight from 'rehype-highlight'
-import remarkGfm from 'remark-gfm'
-import remarkToc from 'remark-toc'
-import rehypeSlug from 'rehype-slug'
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { ExternalLink, Lock, Sparkles } from 'lucide-react'
 import Giscus from '@giscus/react'
@@ -15,6 +10,8 @@ import { Page } from '@/components/layouts/layouts'
 import { Navigation } from '@/components/layouts/navigation'
 import { Section } from '@/components/layouts/section'
 import { useTheme } from '@/providers/theme-provider'
+import { MarkdownViewer } from '@/components/markdown/markdown-viewer'
+import OpenSource from '@/components/open-source'
 
 const fetchBlogPost = createServerFn({ method: 'GET' })
   .inputValidator(z.string().optional())
@@ -34,6 +31,7 @@ const fetchBlogPost = createServerFn({ method: 'GET' })
       restricted: blog.restricted,
       restrictedToCompany: blog.restrictedToCompany,
       externalLink: blog.externalLink,
+      openSource: blog.openSource,
     }
   })
 
@@ -69,6 +67,7 @@ function BlogPage() {
     restricted,
     restrictedToCompany,
     externalLink,
+    openSource,
   } = Route.useLoaderData()
 
   const { theme } = useTheme()
@@ -121,28 +120,21 @@ function BlogPage() {
                   <Sparkles className="h-4 w-4" />
                   AI Summary
                 </h2>
-                <Markdown
-                  remarkPlugins={[remarkGfm]}
-                  rehypePlugins={[rehypeHighlight, rehypeSlug]}
-                >
-                  {aiSummary}
-                </Markdown>
+                <MarkdownViewer content={aiSummary} />
               </div>
             </Section>
           )}
         </>
       ) : (
-        <div className="prose-stone prose sm:prose-md md:prose-lg dark:prose-invert max-w-none p-6 mx-3">
-          <Markdown
-            remarkPlugins={[
-              remarkGfm,
-              [remarkToc, { heading: 'Contents', maxDepth: 3 }],
-            ]}
-            rehypePlugins={[rehypeHighlight, rehypeSlug]}
-          >
-            {content}
-          </Markdown>
-        </div>
+        <Section className="prose-stone prose sm:prose-md md:prose-lg dark:prose-invert max-w-none p-6">
+          <MarkdownViewer content={content} />
+        </Section>
+      )}
+
+      {openSource && openSource.length > 0 && (
+        <Section className="">
+          <OpenSource projects={openSource} />
+        </Section>
       )}
 
       <Section className="p-4">

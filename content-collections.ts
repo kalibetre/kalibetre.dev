@@ -15,6 +15,14 @@ const blogs = defineCollection({
     restricted: z.boolean().optional(),
     restrictedToCompany: z.string().optional(),
     externalLink: z.string().optional(),
+    openSource: z
+      .array(
+        z.object({
+          url: z.string().url(),
+          label: z.string(),
+        }),
+      )
+      .optional(),
   }),
   transform: ({ content, ...blog }) => {
     return {
@@ -27,6 +35,7 @@ const blogs = defineCollection({
       restricted: blog.restricted,
       restrictedToCompany: blog.restrictedToCompany,
       externalLink: blog.externalLink,
+      openSource: blog.openSource,
       content,
     }
   },

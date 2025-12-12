@@ -24,7 +24,7 @@ export interface NavigationProps {
 export function Navigation({ items }: { items: Array<NavigationItem> }) {
   const { theme, toggleTheme } = useTheme()
   return (
-    <Section className="p-0 h-12 z-100 flex items-center justify-between px-6 sticky top-0 backdrop-blur-3xl border-b">
+    <Section className="p-0 h-12 z-100 flex items-center justify-between px-6 sticky top-0 bg-background border-b">
       <div className="flex gap-1 items-center h-8">
         <Link
           to="/"
