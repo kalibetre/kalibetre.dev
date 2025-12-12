@@ -132,9 +132,7 @@ function BlogPage() {
       )}
 
       {openSource && openSource.length > 0 && (
-        <Section className="">
-          <OpenSource projects={openSource} />
-        </Section>
+        <OpenSource projects={openSource} />
       )}
 
       <Section className="p-4">
